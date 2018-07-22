@@ -415,4 +415,43 @@ asm(BGND);
     </Events>
   </Bean>
 
+  <Bean name="PWM8" type="Init_PWM">
+    <Enabled v="Y"/>
+
+    <Properties>
+      <Component_name v="PWM8"/>
+      <Device v="PWM"/>
+      <group name="Settings">
+        <group name="Clock settings">
+          <Prescaler_B_select v="1"/>
+          <Clock_B_frequency v="24000 kHz"/>
+          <Prescaler_A_select v="1"/>
+          <Clock_A_frequency v="24000 kHz"/>
+          <Scale_value_of_clock_SB v="0"/>
+          <Clock_SB_frequency v="46.87 kHz"/>
+          <Scale_value_of_clock_SA v="0"/>
+          <Clock_SA_frequency v="46.87 kHz"/>
+        </group>
+        <Concatenate_Channels_6_and_7 v="no"/>
+        <Concatenate_Channels_4_and_5 v="no"/>
+        <Concatenate_Channels_2_and_3 v="no"/>
+        <Concatenate_Channels_0_and_1 v="no"/>
+        <Stop_in_wait_mode v="no"/>
+        <Stop_in_freeze_mode v="no"/>
+      </group>
+      <list name="Channels" v="0">
+      </list>
+      <group name="Initialization">
+        <Call_Init_method v="yes"/>
+      </group>
+    </Properties>
+
+    <Methods>
+      <Init v="generate code"/>
+    </Methods>
+
+    <Events>
+    </Events>
+  </Bean>
+
 </PE_PROJECT_SETTINGS_DOCUMENTATION>

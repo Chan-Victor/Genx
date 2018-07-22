@@ -1,5 +1,5 @@
-
-PROGRAM "E:\SW\Gen\bin\Project.abs"
+*** EVALUATION ***
+PROGRAM "E:\DevelopmentProduct\GasEngine\firmware\Genx-develop\Gen\bin\Project.abs"
 
 *********************************************************************************************
 TARGET SECTION
@@ -29,6 +29,7 @@ TaskCalib.c.o                           Model: BANKED,        Lang: ANSI-C
 TaskExtCom.c.o                          Model: BANKED,        Lang: ANSI-C
 TaskPeriod.c.o                          Model: BANKED,        Lang: ANSI-C
 GPIO_D.c.o                              Model: BANKED,        Lang: ANSI-C
+PWM8.c.o                                Model: BANKED,        Lang: ANSI-C
 
 *********************************************************************************************
 STARTUP SECTION
@@ -50,7 +51,7 @@ Section Name                    Size  Type     From       To       Segment
 .rodata                          264     R     0xC04A     0xC151   ROM_C000
 NON_BANKED                       141     R     0xC152     0xC1DE   ROM_C000
 .copy                              2     R     0xC1DF     0xC1E0   ROM_C000
-.text                           1229     R    0xE8000    0xE84CC   PAGE_0E
+.text                           1261     R    0xE8000    0xE84EC   PAGE_0E
 .abs_section_8                     1   N/I        0x8        0x8   .absSeg0
 .abs_section_9                     1   N/I        0x9        0x9   .absSeg1
 .abs_section_b                     1   N/I        0xB        0xB   .absSeg2
@@ -321,7 +322,7 @@ NON_BANKED                       141     R     0xC152     0xC1DE   ROM_C000
 .stack                           128   R/W     0x2459     0x24D8   RAM
 
 Summary of section sizes per section type:
-READ_ONLY (R):         72E (dec:     1838)
+READ_ONLY (R):         74E (dec:     1870)
 READ_WRITE (R/W):      4D9 (dec:     1241)
 NO_INIT (N/I):         148 (dec:      328)
 
@@ -348,7 +349,7 @@ MODULE:                 -- rtshc12.c.o (ansibi.lib) --
 - VARIABLES:
 MODULE:                 -- Cpu.c.o --
 - PROCEDURES:
-     PE_low_level_init                        E8029      15      21       2   .text       
+     PE_low_level_init                        E8029      19      25       2   .text       
      Cpu_Interrupt                             C000       2       2      60   .init       
      _EntryPoint                               C002      3E      62       3   .init       
 - VARIABLES:
@@ -407,15 +408,15 @@ MODULE:                 -- IO_Map.c.o --
      _OCPD                                       6C       1       1       0   .abs_section_6c
      _PTPSR                                      6E       1       1       0   .abs_section_6e
      _ATDSTAT0                                   76       1       1       0   .abs_section_76
-     _PWME                                       A0       1       1       0   .abs_section_a0
-     _PWMPOL                                     A1       1       1       0   .abs_section_a1
-     _PWMCLK                                     A2       1       1       0   .abs_section_a2
-     _PWMPRCLK                                   A3       1       1       0   .abs_section_a3
-     _PWMCAE                                     A4       1       1       0   .abs_section_a4
-     _PWMCTL                                     A5       1       1       0   .abs_section_a5
+     _PWME                                       A0       1       1       2   .abs_section_a0
+     _PWMPOL                                     A1       1       1       1   .abs_section_a1
+     _PWMCLK                                     A2       1       1       1   .abs_section_a2
+     _PWMPRCLK                                   A3       1       1       1   .abs_section_a3
+     _PWMCAE                                     A4       1       1       1   .abs_section_a4
+     _PWMCTL                                     A5       1       1       1   .abs_section_a5
      _PWMCLKAB                                   A6       1       1       0   .abs_section_a6
-     _PWMSCLA                                    A8       1       1       0   .abs_section_a8
-     _PWMSCLB                                    A9       1       1       0   .abs_section_a9
+     _PWMSCLA                                    A8       1       1       1   .abs_section_a8
+     _PWMSCLB                                    A9       1       1       1   .abs_section_a9
      _SCI0ACR2                                   CA       1       1       0   .abs_section_ca
      _SCI0CR2                                    CB       1       1       0   .abs_section_cb
      _SCI0SR1                                    CC       1       1       0   .abs_section_cc
@@ -625,21 +626,21 @@ MODULE:                 -- Vectors.c.o --
      _ResetVectorTable                         FFFA       6       6       0   .abs_section_fffa
 MODULE:                 -- GensetX.c.o --
 - PROCEDURES:
-     main                                     E803E       A      10       2   .text       
+     main                                     E8042       A      10       2   .text       
 - VARIABLES:
 MODULE:                 -- RTI1.c.o --
 - PROCEDURES:
-     RTI1_Init                                E8048      1C      28       2   .text       
+     RTI1_Init                                E804C      1C      28       2   .text       
 - VARIABLES:
 MODULE:                 -- OS_CPU_C.C.o --
 - PROCEDURES:
-     OSInitHookBegin                          E8064       1       1       2   .text       
-     OSInitHookEnd                            E8065       1       1       2   .text       
-     OSTaskCreateHook                         E8066       1       1       2   .text       
-     OSTaskIdleHook                           E8067       1       1       2   .text       
-     OSTaskSwHook                             E8068       1       1       4   .text       
-     OSTCBInitHook                            E8069       1       1       2   .text       
-     OSTimeTickHook                           E806A       1       1       2   .text       
+     OSInitHookBegin                          E8068       1       1       2   .text       
+     OSInitHookEnd                            E8069       1       1       2   .text       
+     OSTaskCreateHook                         E806A       1       1       2   .text       
+     OSTaskIdleHook                           E806B       1       1       2   .text       
+     OSTaskSwHook                             E806C       1       1       4   .text       
+     OSTCBInitHook                            E806D       1       1       2   .text       
+     OSTimeTickHook                           E806E       1       1       2   .text       
      OSTickISR                                 C162      23      35       1   NON_BANKED  
      OSIntCtxSw                                C185      18      24       1   NON_BANKED  
      OSTaskStkInit                             C19D      2B      43       1   NON_BANKED  
@@ -647,19 +648,19 @@ MODULE:                 -- OS_CPU_C.C.o --
 - VARIABLES:
 MODULE:                 -- OS_CORE.C.o --
 - PROCEDURES:
-     OSInit                                   E806B      1D      29       2   .text       
-     OSIntEnter                               E8088      11      17       2   .text       
-     OSIntExit                                E8099      66     102       2   .text       
-     OSStart                                  E80FF      33      51       2   .text       
-     OSTimeTick                               E8132      72     114       2   .text       
-     OS_InitEventList                         E81A4      25      37       2   .text       
-     OS_InitMisc                              E81C9      21      33       2   .text       
-     OS_InitRdyList                           E81EA      20      32       2   .text       
-     OS_InitTaskIdle                          E820A      17      23       2   .text       
-     OS_InitTCBList                           E8221      3E      62       2   .text       
-     OS_Sched                                 E825F      4E      78       4   .text       
-     OS_TaskIdle                              E82AD      20      32       3   .text       
-     OS_TCBInit                               E82CD      A7     167       2   .text       
+     OSInit                                   E806F      1D      29       2   .text       
+     OSIntEnter                               E808C      11      17       2   .text       
+     OSIntExit                                E809D      66     102       2   .text       
+     OSStart                                  E8103      33      51       2   .text       
+     OSTimeTick                               E8136      72     114       2   .text       
+     OS_InitEventList                         E81A8      25      37       2   .text       
+     OS_InitMisc                              E81CD      21      33       2   .text       
+     OS_InitRdyList                           E81EE      20      32       2   .text       
+     OS_InitTaskIdle                          E820E      17      23       2   .text       
+     OS_InitTCBList                           E8225      3E      62       2   .text       
+     OS_Sched                                 E8263      4E      78       4   .text       
+     OS_TaskIdle                              E82B1      20      32       3   .text       
+     OS_TCBInit                               E82D1      A7     167       2   .text       
 - VARIABLES:
      OSMapTbl                                  C04A       8       8       1   .rodata     
      OSUnMapTbl                                C052     100     256       3   .rodata     
@@ -686,19 +687,19 @@ MODULE:                 -- OS_CORE.C.o --
      OSTime                                    2255       4       4       6   .common     
 MODULE:                 -- OS_TASK.C.o --
 - PROCEDURES:
-     OSTaskCreate                             E8374      8A     138      10   .text       
+     OSTaskCreate                             E8378      8A     138      10   .text       
 - VARIABLES:
 MODULE:                 -- OS_TIME.C.o --
 - PROCEDURES:
-     OSTimeDly                                E83FE      35      53       8   .text       
+     OSTimeDly                                E8402      35      53       8   .text       
 - VARIABLES:
 MODULE:                 -- TaskRecorder.c.o --
 - PROCEDURES:
-     RecorderTask                             E8433       9       9       3   .text       
+     RecorderTask                             E8437       9       9       3   .text       
 - VARIABLES:
 MODULE:                 -- AppEntry.c.o --
 - PROCEDURES:
-     AppsEntry                                E843C      65     101       2   .text       
+     AppsEntry                                E8440      65     101       2   .text       
 - VARIABLES:
      PeriodTask_Stk                            2259      80     128       1   .common     
      RecorderTask_Stk                          22D9      80     128       1   .common     
@@ -706,20 +707,24 @@ MODULE:                 -- AppEntry.c.o --
      ExtendComTask_Stk                         23D9      80     128       1   .common     
 MODULE:                 -- TaskCalib.c.o --
 - PROCEDURES:
-     CalibTask                                E84A1       9       9       3   .text       
+     CalibTask                                E84A5       9       9       3   .text       
 - VARIABLES:
 MODULE:                 -- TaskExtCom.c.o --
 - PROCEDURES:
-     ExtendComTask                            E84AA      10      16       3   .text       
+     ExtendComTask                            E84AE      10      16       3   .text       
 - VARIABLES:
      tickcnt                                   2000       2       2       2   .bss        
 MODULE:                 -- TaskPeriod.c.o --
 - PROCEDURES:
-     PeriodTask                               E84BA       9       9       3   .text       
+     PeriodTask                               E84BE       9       9       3   .text       
 - VARIABLES:
 MODULE:                 -- GPIO_D.c.o --
 - PROCEDURES:
-     GPIO_D_Init                              E84C3       A      10       2   .text       
+     GPIO_D_Init                              E84C7       A      10       2   .text       
+- VARIABLES:
+MODULE:                 -- PWM8.c.o --
+- PROCEDURES:
+     PWM8_Init                                E84D1      1C      28       2   .text       
 - VARIABLES:
 
 *********************************************************************************************
@@ -728,7 +733,7 @@ MODULE STATISTIC
 ---------------------------------------------------------------------------------------------
   Start12.c.o                                  0     52      0
   rtshc12.c.o (ansibi.lib)                     0      5      0
-  Cpu.c.o                                      0     85      0
+  Cpu.c.o                                      0     89      0
   IO_Map.c.o                                 328      0      0
   Vectors.c.o                                  0      0    128
   GensetX.c.o                                  0     10      0
@@ -743,6 +748,7 @@ MODULE STATISTIC
   TaskExtCom.c.o                               2     16      0
   TaskPeriod.c.o                               0      9      0
   GPIO_D.c.o                                   0     10      0
+  PWM8.c.o                                     0     28      0
   other                                      128     10      2
 
 *********************************************************************************************
@@ -754,7 +760,7 @@ SECTION: ".text"
   OSInit OSIntEnter OSIntExit OSStart OSTimeTick OS_InitEventList OS_InitMisc 
   OS_InitRdyList OS_InitTaskIdle OS_InitTCBList OS_Sched OS_TaskIdle OS_TCBInit 
   OSTaskCreate OSTimeDly RecorderTask AppsEntry CalibTask ExtendComTask 
-  PeriodTask GPIO_D_Init 
+  PeriodTask GPIO_D_Init PWM8_Init 
 SECTION: ".bss"
   tickcnt 
 SECTION: ".init"
@@ -1391,15 +1397,15 @@ OBJECT LIST SORTED BY ADDRESS
      _ATDDR9                                     92       2       2       0   .abs_section_92
      _ATDDR10                                    94       2       2       0   .abs_section_94
      _ATDDR11                                    96       2       2       0   .abs_section_96
-     _PWME                                       A0       1       1       0   .abs_section_a0
-     _PWMPOL                                     A1       1       1       0   .abs_section_a1
-     _PWMCLK                                     A2       1       1       0   .abs_section_a2
-     _PWMPRCLK                                   A3       1       1       0   .abs_section_a3
-     _PWMCAE                                     A4       1       1       0   .abs_section_a4
-     _PWMCTL                                     A5       1       1       0   .abs_section_a5
+     _PWME                                       A0       1       1       2   .abs_section_a0
+     _PWMPOL                                     A1       1       1       1   .abs_section_a1
+     _PWMCLK                                     A2       1       1       1   .abs_section_a2
+     _PWMPRCLK                                   A3       1       1       1   .abs_section_a3
+     _PWMCAE                                     A4       1       1       1   .abs_section_a4
+     _PWMCTL                                     A5       1       1       1   .abs_section_a5
      _PWMCLKAB                                   A6       1       1       0   .abs_section_a6
-     _PWMSCLA                                    A8       1       1       0   .abs_section_a8
-     _PWMSCLB                                    A9       1       1       0   .abs_section_a9
+     _PWMSCLA                                    A8       1       1       1   .abs_section_a8
+     _PWMSCLB                                    A9       1       1       1   .abs_section_a9
      _PWMCNT01                                   AC       2       2       0   .abs_section_ac
      _PWMCNT23                                   AE       2       2       0   .abs_section_ae
      _PWMCNT45                                   B0       2       2       0   .abs_section_b0
@@ -1606,37 +1612,38 @@ OBJECT LIST SORTED BY ADDRESS
      _InterruptVectorTable                     FF80      7A     122       0   .abs_section_ff80
      _ResetVectorTable                         FFFA       6       6       0   .abs_section_fffa
      Init                                     E8000      29      41       2   .text       
-     PE_low_level_init                        E8029      15      21       2   .text       
-     main                                     E803E       A      10       2   .text       
-     RTI1_Init                                E8048      1C      28       2   .text       
-     OSInitHookBegin                          E8064       1       1       2   .text       
-     OSInitHookEnd                            E8065       1       1       2   .text       
-     OSTaskCreateHook                         E8066       1       1       2   .text       
-     OSTaskIdleHook                           E8067       1       1       2   .text       
-     OSTaskSwHook                             E8068       1       1       4   .text       
-     OSTCBInitHook                            E8069       1       1       2   .text       
-     OSTimeTickHook                           E806A       1       1       2   .text       
-     OSInit                                   E806B      1D      29       2   .text       
-     OSIntEnter                               E8088      11      17       2   .text       
-     OSIntExit                                E8099      66     102       2   .text       
-     OSStart                                  E80FF      33      51       2   .text       
-     OSTimeTick                               E8132      72     114       2   .text       
-     OS_InitEventList                         E81A4      25      37       2   .text       
-     OS_InitMisc                              E81C9      21      33       2   .text       
-     OS_InitRdyList                           E81EA      20      32       2   .text       
-     OS_InitTaskIdle                          E820A      17      23       2   .text       
-     OS_InitTCBList                           E8221      3E      62       2   .text       
-     OS_Sched                                 E825F      4E      78       4   .text       
-     OS_TaskIdle                              E82AD      20      32       3   .text       
-     OS_TCBInit                               E82CD      A7     167       2   .text       
-     OSTaskCreate                             E8374      8A     138      10   .text       
-     OSTimeDly                                E83FE      35      53       8   .text       
-     RecorderTask                             E8433       9       9       3   .text       
-     AppsEntry                                E843C      65     101       2   .text       
-     CalibTask                                E84A1       9       9       3   .text       
-     ExtendComTask                            E84AA      10      16       3   .text       
-     PeriodTask                               E84BA       9       9       3   .text       
-     GPIO_D_Init                              E84C3       A      10       2   .text       
+     PE_low_level_init                        E8029      19      25       2   .text       
+     main                                     E8042       A      10       2   .text       
+     RTI1_Init                                E804C      1C      28       2   .text       
+     OSInitHookBegin                          E8068       1       1       2   .text       
+     OSInitHookEnd                            E8069       1       1       2   .text       
+     OSTaskCreateHook                         E806A       1       1       2   .text       
+     OSTaskIdleHook                           E806B       1       1       2   .text       
+     OSTaskSwHook                             E806C       1       1       4   .text       
+     OSTCBInitHook                            E806D       1       1       2   .text       
+     OSTimeTickHook                           E806E       1       1       2   .text       
+     OSInit                                   E806F      1D      29       2   .text       
+     OSIntEnter                               E808C      11      17       2   .text       
+     OSIntExit                                E809D      66     102       2   .text       
+     OSStart                                  E8103      33      51       2   .text       
+     OSTimeTick                               E8136      72     114       2   .text       
+     OS_InitEventList                         E81A8      25      37       2   .text       
+     OS_InitMisc                              E81CD      21      33       2   .text       
+     OS_InitRdyList                           E81EE      20      32       2   .text       
+     OS_InitTaskIdle                          E820E      17      23       2   .text       
+     OS_InitTCBList                           E8225      3E      62       2   .text       
+     OS_Sched                                 E8263      4E      78       4   .text       
+     OS_TaskIdle                              E82B1      20      32       3   .text       
+     OS_TCBInit                               E82D1      A7     167       2   .text       
+     OSTaskCreate                             E8378      8A     138      10   .text       
+     OSTimeDly                                E8402      35      53       8   .text       
+     RecorderTask                             E8437       9       9       3   .text       
+     AppsEntry                                E8440      65     101       2   .text       
+     CalibTask                                E84A5       9       9       3   .text       
+     ExtendComTask                            E84AE      10      16       3   .text       
+     PeriodTask                               E84BE       9       9       3   .text       
+     GPIO_D_Init                              E84C7       A      10       2   .text       
+     PWM8_Init                                E84D1      1C      28       2   .text       
 
 *********************************************************************************************
 UNUSED-OBJECTS SECTION
@@ -1690,7 +1697,7 @@ _InterruptVectorTable     USES Cpu_Interrupt OSTickISR
 _ResetVectorTable         USES _EntryPoint 
 Init                      USES _startupData 
 PE_low_level_init         USES _CPMUINT _CPMULVCTL _IRQCR RTI1_Init 
-                                GPIO_D_Init 
+                                GPIO_D_Init PWM8_Init 
 main                      USES PE_low_level_init AppsEntry 
 RTI1_Init                 USES _CPMUINT _CPMUFLG _CPMUPROT _CPMUCLKS _CPMURTI 
 OSInit                    USES OSInitHookBegin OS_InitMisc OS_InitRdyList 
@@ -1728,6 +1735,8 @@ CalibTask                 USES OSTimeDly
 ExtendComTask             USES tickcnt OSTimeDly 
 PeriodTask                USES OSTimeDly 
 GPIO_D_Init               USES _PORTCD _PUCR _DDRCD 
+PWM8_Init                 USES _PWME _PWMPOL _PWMCLK _PWMCAE _PWMCTL _PWMSCLA 
+                                _PWMSCLB _PWMPRCLK 
 
 *********************************************************************************************
 DEPENDENCY TREE
@@ -1741,6 +1750,8 @@ DEPENDENCY TREE
  |  |  +- RTI1_Init           
  |  |  |    
  |  |  +- GPIO_D_Init         
+ |  |  |    
+ |  |  +- PWM8_Init           
  |  |       
  |  +- AppsEntry           
  |     | 
@@ -1847,5 +1858,5 @@ STATISTIC SECTION
 ExeFile:
 --------
 Number of blocks to be downloaded: 6
-Total size of all blocks to be downloaded: 1838
+Total size of all blocks to be downloaded: 1870
 

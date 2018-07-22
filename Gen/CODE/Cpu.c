@@ -7,7 +7,7 @@
 **     Version   : Component 01.016, Driver 02.06, CPU db: 3.00.002
 **     Datasheet : MC9S12GRMV1 Rev. 0.29 April 20, 2010
 **     Compiler  : CodeWarrior HC12 C Compiler
-**     Date/Time : 2018-7-14, 21:29
+**     Date/Time : 2018/7/22, 18:33
 **     Abstract  :
 **         This component "MC9S12G128_100" implements properties, methods,
 **         and events of the CPU.
@@ -29,6 +29,7 @@
 
 #include "RTI1.h"
 #include "GPIO_D.h"
+#include "PWM8.h"
 #include "Events.h"
 #include "Cpu.h"
 
@@ -217,6 +218,8 @@ void PE_low_level_init(void)
   RTI1_Init();
   /* ### Init_GPIO "GPIO_D" init code ... */
   GPIO_D_Init();
+  /* ### Init_PWM "PWM8" init code ... */
+  PWM8_Init();
   __EI();                              /* Enable interrupts */
 }
 

@@ -14,6 +14,11 @@ Module "GPIO_D"    (bean Init_GPIO_HCS12)
                 Call this method in the user code to initialize the module. By default, the method is called by PE 
                 automatically; see "Call Init method" property of the component for more details.
 
+Module "PWM8"      (bean Init_PWM_HCS12)
+   - PWM8_Init -This method initializes registers of the PWM module according to this Peripheral Initialization settings. Call 
+                this method in user code to initialize the module. By default, the method is called by PE automatically; see 
+                "Call Init method" property of the component for more details.
+
 Module "Cpu"       (bean MC9S12G128_100)
    - Cpu_EnableInt -Enable maskable interrupts
    - Cpu_DisableInt -Disable maskable interrupts

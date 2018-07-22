@@ -5,7 +5,7 @@
 **     Processor : MC9S12G128MLL
 **     Version   : Component 01.016, Driver 02.06, CPU db: 3.00.002
 **     Compiler  : CodeWarrior HC12 C Compiler
-**     Date/Time : 2018-7-14, 21:40
+**     Date/Time : 2018/7/22, 18:33
 **     Abstract  :
 **         This component "MC9S12G128_100" implements properties, methods,
 **         and events of the CPU.
@@ -20,6 +20,7 @@
 #include "Cpu.h"
 #include "RTI1.h"
 #include "GPIO_D.h"
+#include "PWM8.h"
 
 /* ISR prototype */
 typedef void (*near tIsrFunc)(void);
