@@ -87,9 +87,7 @@
         <group name="CPU interrupts/resets">
           <boolgroup name="Clock monitor reset" v="Disabled" />
           <boolgroup name="IllegalOpcode" v="Disabled" />
-          <boolgroup name="SWI" v="Enabled">
-            <Interrupt v="Vswi"/>
-          </boolgroup>
+          <boolgroup name="SWI" v="Disabled" />
           <boolgroup name="LVD" v="Disabled" />
           <boolgroup name="PLL" v="Disabled" />
           <boolgroup name="Oscillator Status Changed" v="Disabled" />
@@ -140,9 +138,7 @@
         <event name="OnReset" v="don&apos;t generate code" />
         <event name="OnClockMonitorFail" v="don&apos;t generate code" />
         <event name="OnIllegalOpcode" v="don&apos;t generate code" />
-        <event name="OnSwINT" v="generate code">
-          <Event_procedure_name v="Cpu_OnSwINT"/>
-        </event>
+        <event name="OnSwINT" v="don&apos;t generate code" />
         <event name="OnLvdStatusChanged" v="don&apos;t generate code" />
         <event name="OnPllLockStatusChanged" v="don&apos;t generate code" />
         <event name="OnOscStatusChanged" v="don&apos;t generate code" />

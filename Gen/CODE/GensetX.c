@@ -20,6 +20,7 @@
 #include "Events.h"
 #include "RTI1.h"
 #include "GPIO_D.h"
+#include "AS1.h"
 /* Include shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"

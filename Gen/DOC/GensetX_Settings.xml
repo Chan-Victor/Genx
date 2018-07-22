@@ -415,4 +415,98 @@ asm(BGND);
     </Events>
   </Bean>
 
+  <Bean name="AS1" type="AsynchroSerial">
+    <Enabled v="Y"/>
+
+    <Properties>
+      <Component_name v="AS1"/>
+      <Channel v="SCI1"/>
+      <boolgroup name="Interrupt service/event" v="Disabled" />
+      <group name="Settings">
+        <Parity v="none"/>
+        <Width v="8 bits"/>
+        <Stop_bit v="1"/>
+        <enumgroup name="SCI output mode" v="Normal">
+        </enumgroup>
+        <boolgroup name="Receiver" v="Enabled">
+          <RxD v="PS2_RXD1"/>
+          <RxD_pin_signal v=""/>
+        </boolgroup>
+        <boolgroup name="Transmitter" v="Enabled">
+          <TxD v="PS3_TXD1"/>
+          <TxD_pin_signal v=""/>
+        </boolgroup>
+        <Baud_rate v="9600 baud"/>
+        <Break_signal v="Disabled"/>
+        <Wakeup_condition v="Idle line wakeup"/>
+        <Transmitter_output v="Not inverted"/>
+        <Receiver_input v="Not inverted"/>
+        <Stop_in_wait_mode v="no"/>
+        <Idle_line_mode v="starts after start bit"/>
+        <Break_generation_length v="10/11 bits"/>
+        <boolgroup name="Infrared SCI output" v="Disabled" />
+        <Active_edge_detection v="Disabled"/>
+        <Bit_error_detection v="Disabled"/>
+      </group>
+      <group name="Initialization">
+        <Enabled_in_init__code v="yes"/>
+        <Events_enabled_in_init_ v="yes"/>
+      </group>
+      <group name="CPU clock/speed selection">
+        <High_speed_mode v="This component enabled"/>
+        <Low_speed_mode v="This component disabled"/>
+        <Slow_speed_mode v="This component disabled"/>
+      </group>
+    </Properties>
+
+    <Methods>
+      <Enable v="don&apos;t generate code"/>
+      <Disable v="don&apos;t generate code"/>
+      <EnableEvent v="don&apos;t generate code"/>
+      <DisableEvent v="don&apos;t generate code"/>
+      <RecvChar v="generate code"/>
+      <SendChar v="generate code"/>
+      <RecvBlock v="don&apos;t generate code"/>
+      <SendBlock v="don&apos;t generate code"/>
+      <ClearRxBuf v="don&apos;t generate code"/>
+      <ClearTxBuf v="don&apos;t generate code"/>
+      <CharsInRxBuf v="don&apos;t generate code"/>
+      <GetCharsInRxBuf v="generate code"/>
+      <CharsInTxBuf v="don&apos;t generate code"/>
+      <GetCharsInTxBuf v="generate code"/>
+      <SetBaudRateMode v="don&apos;t generate code"/>
+      <GetError v="don&apos;t generate code"/>
+      <GetBreak v="don&apos;t generate code"/>
+      <SetBreak v="don&apos;t generate code"/>
+      <TurnTxOn v="don&apos;t generate code"/>
+      <TurnTxOff v="don&apos;t generate code"/>
+      <TurnRxOn v="don&apos;t generate code"/>
+      <TurnRxOff v="don&apos;t generate code"/>
+      <LoopMode v="don&apos;t generate code"/>
+      <SetIdle v="don&apos;t generate code"/>
+      <Standby v="don&apos;t generate code"/>
+      <SetDirection v="don&apos;t generate code"/>
+      <GetRxIdle v="don&apos;t generate code"/>
+      <GetTxComplete v="don&apos;t generate code"/>
+      <EnableRxEdgeDetect v="don&apos;t generate code"/>
+      <DisableRxEdgeDetect v="don&apos;t generate code"/>
+    </Methods>
+
+    <Events>
+      <Event_module_name v="Events"/>
+      <event name="BeforeNewSpeed" v="don&apos;t generate code" />
+      <event name="AfterNewSpeed" v="don&apos;t generate code" />
+      <event name="OnError" v="don&apos;t generate code" />
+      <event name="OnRxChar" v="don&apos;t generate code" />
+      <event name="OnRxCharExt" v="don&apos;t generate code" />
+      <event name="OnTxChar" v="don&apos;t generate code" />
+      <event name="OnFullRxBuf" v="don&apos;t generate code" />
+      <event name="OnFreeTxBuf" v="don&apos;t generate code" />
+      <event name="OnBreak" v="don&apos;t generate code" />
+      <event name="OnIdle" v="don&apos;t generate code" />
+      <event name="OnTxComplete" v="don&apos;t generate code" />
+      <event name="OnRxActiveEdge" v="don&apos;t generate code" />
+    </Events>
+  </Bean>
+
 </PE_PROJECT_SETTINGS_DOCUMENTATION>

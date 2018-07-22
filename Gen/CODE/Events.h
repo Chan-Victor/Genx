@@ -25,6 +25,7 @@
 #include "IO_Map.h"
 #include "RTI1.h"
 #include "GPIO_D.h"
+#include "AS1.h"
 
 #pragma CODE_SEG DEFAULT
 
